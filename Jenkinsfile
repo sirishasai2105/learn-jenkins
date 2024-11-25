@@ -33,7 +33,7 @@ pipeline {
                  timeout(time: 10, unit: 'SECONDS')
              }
              steps {
-                sh 'echo  This is Test'
+                sh 'echo   This is Test'
                 // sh 'sleep 11'
             }
         }
