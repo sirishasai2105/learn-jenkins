@@ -2,13 +2,17 @@ pipeline {
     agent {
         label 'AGENT-1'
     }
+       options{
+        timeout(time: 10, unit: 'seconds')
+        disableConcurrentBuilds()
+        //retry(1)
+    }
     stages {
         stage('Build') {
             options {
                 // Timeout counter starts BEFORE agent is allocated
                 timeout(time: 10, unit: 'SECONDS')
-                disableConcurrentBuilds()
-            }
+                           }
             steps {
                 sh 'echo This is build'
                 // sh 'sleep 11'
