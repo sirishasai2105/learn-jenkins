@@ -3,9 +3,9 @@ pipeline {
         label 'AGENT-1'
     }
        options{
-        timeout(time: 10, unit: 'SECONDS')
+        timeout(time: 10, unit: 'sECONDS')
         disableConcurrentBuilds()
-        //retry(1)
+        retry(1)
     }
     stages {
         stage('Build') {
